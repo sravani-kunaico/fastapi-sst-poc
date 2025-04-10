@@ -3,3 +3,5 @@
 .sst
 .venv
 .idea
+.DS_Store
+*.egg-info

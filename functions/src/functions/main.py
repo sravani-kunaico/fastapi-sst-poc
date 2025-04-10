@@ -21,13 +21,9 @@ class TaskListResponse(BaseModel):
 app = FastAPI()
 handler = Mangum(app)
 
-# Initialize DynamoDB client and fetch table
-# dynamodb = boto3.resource('dynamodb')
-# table = dynamodb.Table('Tasks')
-
 @app.get("/")
 async def root():
-    return {"message": "Hello from ToDo API!"}
+    return {"message": "Hello from FastAPI!"}
 
 
 @app.put("/create-task")
