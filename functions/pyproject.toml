@@ -1,0 +1,10 @@
+[project]
+name = "functions"
+version = "0.1.0"
+description = "Lambda function handlers"
+dependencies = ["fastapi", "mangum", "boto3", "sst"]
+requires-python = "==3.11.*"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,12 @@
+[project]
+name = "aws-fastapi-poc"
+version = "0.1.0"
+description = "A simple POC with DynamoDB integration using FastAPI"
+dependencies = []
+
+# It is recommended to specify your python version to match your Lambda runtime otherwise you may
+# encounter issues with dependencies.
+requires-python = "==3.11.*"
+
+[tool.uv.workspace]
+members = ["functions"]
