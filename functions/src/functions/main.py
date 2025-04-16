@@ -7,7 +7,6 @@ from fastapi import FastAPI, HTTPException
 from mangum import Mangum
 from pydantic import BaseModel
 from boto3.dynamodb.conditions import Key
-# from sst import Resource
 
 class TaskRequest(BaseModel):
     content: str
@@ -26,7 +25,7 @@ async def root():
     return {"message": "Hello from FastAPI!"}
 
 
-@app.put("/create-task")
+@app.post("/create-task")
 async def create_task(task_request: TaskRequest):
     created_time = int(time.time())
     item = {
@@ -38,7 +37,7 @@ async def create_task(task_request: TaskRequest):
         "ttl": int(created_time + 86400),  # Expire after 24 hours.
     }
 
-    # Put it into the table.
+    # Save Item.
     table = _get_table()
     table.put_item(Item=item)
     return {"task": item}

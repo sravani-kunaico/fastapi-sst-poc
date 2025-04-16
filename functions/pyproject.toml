@@ -1,7 +1,7 @@
 [project]
 name = "functions"
 version = "0.1.0"
-description = "Lambda function handlers"
+description = "FastAPI SST POC"
 dependencies = ["fastapi", "mangum", "boto3", "sst"]
 requires-python = "==3.11.*"
 

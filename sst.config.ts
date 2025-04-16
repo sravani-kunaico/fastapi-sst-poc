@@ -25,6 +25,9 @@ export default $config({
       }
     });
 
+    // Create a Lambda function with a URL
+    // and link it to the DynamoDB table
+    // This function will be triggered by HTTP requests
     const api = new sst.aws.Function("FastAPIPOC", {
       handler: "functions/src/functions/main.handler",
       runtime: "python3.11",
